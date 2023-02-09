@@ -1,7 +1,11 @@
 <template>
+  <header>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png?20150121202211"></a>
+  </header>
+
   <div class="searchArea">
     <h2>Digite o nome ou o ID do Pokemon desejado:</h2>
-    <input type="text" v-model="inputValue" placeholder="Nome ou ID do Pokemon"/>
+    <input type="text" v-model="inputValue" placeholder="Nome ou ID do Pokemon" autofocus/><br>
     <button @click="searchPokemon">Procurar Pokemon</button>
   </div>
 
