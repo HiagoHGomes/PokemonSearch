@@ -9,17 +9,20 @@
     <button @click="searchPokemon">Procurar Pokemon</button>
   </div>
 
-    <div v-if="pokemon">
-      <h2>{{ pokemon.name }}</h2>
-      <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(', ') }}</p>
-      <img :src="pokemon.sprites.front_default" />
+    <div v-if="pokemon" class="pokemon">
+      <div class="pokemonInfo">
+        <h2>{{ pokemon.name }}</h2>
+        <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(', ') }}</p>
+        <img :src="pokemon.sprites.front_default" />
 
-      <h3>Habilidades</h3>
-      <ul>
-        <li v-for="ability of pokemon.abilities">{{ ability.ability.name }}</li>
-      </ul>
+        <h3>Habilidades:</h3>
+        <ul>
+          <li v-for="ability of pokemon.abilities">{{ ability.ability.name }}</li>
+        </ul>
+      </div>
 
       <table>
+        <h3>Caracteristicas:</h3>
         <tr>
           <th>HP:</th>
           <td>{{ pokemon.stats.find(s => s.stat.name === 'hp').base_stat }}</td>
@@ -46,6 +49,7 @@
         </tr>
       </table>
     </div>
+    <footer><a href="https://hiagohgomes.github.io/portifolio/" target="_blank">Desenvolvido por Hiago Henrique</a></footer>
   
 </template>
 
