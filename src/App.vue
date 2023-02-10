@@ -11,14 +11,17 @@
 
     <div v-if="pokemon" class="pokemon">
       <div class="pokemonInfo">
-        <h2>{{ pokemon.name }}</h2>
-        <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(', ') }}</p>
-        <img :src="pokemon.sprites.front_default" />
-
-        <h3>Habilidades:</h3>
-        <ul>
-          <li v-for="ability of pokemon.abilities">{{ ability.ability.name }}</li>
-        </ul>
+        <div class="mobile1">
+          <h2>{{ pokemon.name }}</h2>
+          <p>Tipo: {{ pokemon.types.map(t => t.type.name).join(', ') }}</p>
+          <img :src="pokemon.sprites.front_default" />
+        </div>
+        <div class="mobile2">
+          <h3>Habilidades:</h3>
+          <ul>
+            <li v-for="ability of pokemon.abilities">{{ ability.ability.name }}</li>
+          </ul>
+        </div>
       </div>
 
       <table>
